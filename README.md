@@ -1,3 +1,3 @@
-# react-native-course-beeva
+# React Native Course BEEVA
 
-React Native Course at BEEVA
+React Native Course BEEVA
