@@ -59,3 +59,8 @@ typings/
 
 # Yarn
 yarn.lock
+
+# ReactNative build
+
+/android/
+/android/**/

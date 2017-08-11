@@ -34,13 +34,14 @@ class Button extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#EEE',
+    backgroundColor: '#2196F3',
     width: 200,
     borderRadius: 5,
     padding: 10
   },
   textButton: {
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#FFF'
   }
 });
 
