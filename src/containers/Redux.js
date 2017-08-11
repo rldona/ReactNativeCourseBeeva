@@ -15,9 +15,8 @@ class Redux extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{marginBottom: 10}}>App</Text>
         <ComponentA />
-        <View style={{height: 10}} />
+        <View style={{height: 20}} />
         <ComponentB />
       </View>
     );
@@ -30,8 +29,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFF',
-    borderColor: '#E91E63',
-    borderWidth: 5,
     padding: 20,
     margin: 10
   }

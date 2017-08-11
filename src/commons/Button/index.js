@@ -4,28 +4,43 @@ import {
   StyleSheet,
   Text,
   View,
-  Dimensions
+  TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
 class Button extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  _onPressButton = () => {
+    console.log(this.props);
+    this.props.onPressButton();
+  }
+
   render() {
+    const { title, onPressButton } = this.props;
     return (
-      <View style={styles.container}>
-        <Text>
-          Button
-        </Text>
-      </View>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={onPressButton} style={styles.button}>
+        <Text style={styles.textButton}>{ title }</Text>
+      </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+  button: {
+    backgroundColor: '#EEE',
+    width: 200,
+    borderRadius: 5,
+    padding: 10
+  },
+  textButton: {
+    textAlign: 'center'
   }
 });
 

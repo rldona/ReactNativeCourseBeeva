@@ -6,12 +6,20 @@ import {
   View
 } from 'react-native';
 
+import { Animations, Firebase, Redux } from './containers';
+
+import { DrawerNavigator } from 'react-navigation';
+
+const ReactNativeCourseApp = DrawerNavigator({
+  Redux: { screen: Redux },
+  Animations: { screen: Animations },
+  Firebase: { screen: Firebase },
+});
+
 class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={{marginBottom: 10}}>Welcome to React Native Course !!</Text>
-      </View>
+      <ReactNativeCourseApp />
     );
   }
 }
