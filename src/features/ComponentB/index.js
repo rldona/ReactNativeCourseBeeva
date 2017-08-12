@@ -13,13 +13,18 @@ import SubComponentB2 from './SubComponentB2';
 const { width, height } = Dimensions.get('window');
 
 class ContainerB extends Component {
+
+  constructor(props, context) {
+    super(props);
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{marginBottom: 10}}>Component B</Text>
+        <Text style={{marginBottom: 10, color: '#FFF'}}>Component B</Text>
         <SubComponentB1 />
         <View style={{height: 10}} />
-        <SubComponentB2 />
+        <SubComponentB2 {...this.props} />
       </View>
     );
   }
@@ -30,7 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#3c8e3f',
     borderColor: '#3c8e3f',
     borderWidth: 5,
     width: width - 50,

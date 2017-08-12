@@ -9,12 +9,17 @@ import {
 
 const { width, height } = Dimensions.get('window');
 
-class ComponentB2 extends Component {
+class SubComponentB2 extends Component {
+
+  constructor(props, context) {
+    super(props);
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text>
-          SubComponent B2
+          SubComponent B2 --> {this.props.components.subComponentB2.active ? 'ON' : 'OFF' }
         </Text>
       </View>
     );
@@ -28,9 +33,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
     borderColor: '#8BC34A',
-    borderWidth: 5,
+    borderWidth: 0,
     width: width - 80
   }
 });
 
-export default ComponentB2;
+export default SubComponentB2;

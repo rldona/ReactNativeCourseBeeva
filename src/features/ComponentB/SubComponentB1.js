@@ -9,7 +9,7 @@ import {
 
 const { width, height } = Dimensions.get('window');
 
-class ComponentB1 extends Component {
+class SubComponentB1 extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
     borderColor: '#8BC34A',
-    borderWidth: 5,
+    borderWidth: 0,
     width: width - 80
   }
 });
 
-export default ComponentB1;
+export default SubComponentB1;

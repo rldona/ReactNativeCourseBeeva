@@ -16,7 +16,6 @@ class Button extends Component {
   }
 
   _onPressButton = () => {
-    console.log(this.props);
     this.props.onPressButton();
   }
 
@@ -34,8 +33,8 @@ class Button extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#2196F3',
-    width: 200,
+    backgroundColor: '#E91E63',
+    width: 300,
     borderRadius: 5,
     padding: 10
   },

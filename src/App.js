@@ -6,9 +6,13 @@ import {
   View
 } from 'react-native';
 
-import { Animations, Firebase, Redux } from './containers';
+import { Provider } from 'react-redux';
+import configureStore from './redux/configureStore.js';
 
 import { DrawerNavigator } from 'react-navigation';
+import { Animations, Firebase, Redux } from './containers';
+
+const store = configureStore();
 
 const ReactNativeCourseApp = DrawerNavigator({
   Redux: { screen: Redux },
@@ -19,7 +23,9 @@ const ReactNativeCourseApp = DrawerNavigator({
 class App extends Component {
   render() {
     return (
-      <ReactNativeCourseApp />
+      <Provider store={store}>
+        <ReactNativeCourseApp />
+      </Provider>
     );
   }
 }

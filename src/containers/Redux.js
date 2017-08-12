@@ -7,17 +7,25 @@ import {
   Dimensions
 } from 'react-native';
 
+import { connect } from 'react-redux';
+import { activateState, deactivateState } from '../redux/actions';
+
 import { ComponentA, ComponentB } from '../features';
 
 const { width, height } = Dimensions.get('window');
 
 class Redux extends Component {
+
+  constructor(props, context) {
+    super(props);
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <ComponentA />
+        <ComponentA {...this.props} />
         <View style={{height: 20}} />
-        <ComponentB />
+        <ComponentB {...this.props} />
       </View>
     );
   }
@@ -28,10 +36,26 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFF',
+    backgroundColor: '#CCC',
     padding: 20,
-    margin: 10
   }
 });
 
-export default Redux;
+function mapStateToProps (state) {
+  return {
+    components: state.components
+  };
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    activateState: (comp) => dispatch(activateState(comp)),
+    deactivateState: (comp) => dispatch(deactivateState(comp))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Redux);
+

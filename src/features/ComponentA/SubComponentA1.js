@@ -15,10 +15,34 @@ class ComponentA1 extends Component {
 
   constructor(props, context) {
     super(props);
+
+    this.state = {
+      button: {
+        title: 'Activate SubComponent B2'
+      }
+    }
   }
 
   _onPresButton = () => {
-    alert('button pressed !!');
+    if(this.props.components.subComponentB2.active) {
+      this.props.deactivateState('subComponentB2');
+      this.setState(previousState => {
+        return {
+          button: {
+            title: 'Activate SubComponent B2'
+          }
+        }
+      });
+    } else {
+      this.props.activateState('subComponentB2');
+      this.setState(previousState => {
+        return {
+          button: {
+            title: 'Deactivate SubComponent B2'
+          }
+        }
+      });
+    }
   }
 
   render() {
@@ -28,7 +52,7 @@ class ComponentA1 extends Component {
           SubComponent A1
         </Text>
         <Button
-          title="Activate SubComponent B2"
+          title={this.state.button.title}
           onPressButton={this._onPresButton} />
       </View>
     );
@@ -42,7 +66,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
     borderColor: '#00BCD4',
-    borderWidth: 5,
+    borderWidth: 0,
     width: width - 80
   }
 });

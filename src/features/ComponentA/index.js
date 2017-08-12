@@ -16,8 +16,8 @@ class ContainerA extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{marginBottom: 10}}>Component A</Text>
-        <SubComponentA1 />
+        <Text style={{marginBottom: 10, color: '#FFF'}}>Component A</Text>
+        <SubComponentA1 {...this.props} />
         <View style={{height: 10}} />
         <SubComponentA2 />
       </View>
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#187dce',
     borderColor: '#187dce',
     borderWidth: 5,
     width: width - 50,

@@ -1,0 +1,3 @@
+export const ACTIVATE_STATE       = 'ACTIVATE_STATE';
+export const DEACTIVATE_STATE     = 'DEACTIVATE_STATE';
+export const ACTIVATE_SUB_COMP_B2     = 'ACTIVATE_SUB_COMP_B2';
